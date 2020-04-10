@@ -23,5 +23,8 @@
     <ClInclude Include="Main.hh">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="YTDLClass.hh">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
