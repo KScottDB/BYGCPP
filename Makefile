@@ -1,12 +1,13 @@
-BINARY = bin/BayoudGUI.exe
+BINARY = bin/BayoudGUI
 
-CC = cl
-NAMEFLAG = /Fe
+CC = g++
+NAMEFLAG = -Fe
 
-FLAGS = /O2
+FLAGS = -O2
 
 SOURCES = Main.cc
 
 $(BINARY): $(SOURCES)
-	$(CC) $(FLAGS) $** $(NAMEFLAG)"$@
+	$(CC) $(FLAGS) $^ $(NAMEFLAG)"$@"
+
 
