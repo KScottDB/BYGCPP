@@ -23,15 +23,18 @@ namespace YoutubeDL {
 
 	class YoutubeInterface {
 	private:
-		// Check if connected to Python API
+		/* Are we connected to the Python API? */
 		bool connectedToPython = false;
 
-		// ØMQ Variables
-		zmq::context_t zmqContext (1);
-		zmq::socket_t  zmqSocket  (zmqContext, ZMQ_REQ);
+		/* ØMQ Variables */
+		zmq::context_t zmqContext;
+		zmq::socket_t  zmqSocket;
 
-		// Starts Python API server and connects to it
+		/* Starts Python API server and connects to it. */
 		void connectPy();
+
+		/* Initializes ØMQ variables. */
+		void zmqInit();
 	public:
 		/* Download a video to disk. */
 		void downloadVideo(YoutubeVideo, str fileName, YoutubeFormat);

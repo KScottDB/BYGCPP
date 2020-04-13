@@ -9,7 +9,7 @@ Hopefully this one is easier to maintain.
 
 # How
 
-Requirements: CMake, ZeroMQ
+Requirements: CMake, ZeroMQ (zmqcpp)
 
 This project uses CMake as a building system.
 
@@ -17,8 +17,8 @@ On most systems you should be able to run these commands to build,
 provided your buildtools are in PATH or whatever.
 
 ```
-cmake -S . -B bin
-cd bin
+cmake -S . -B build
+cd build
 make              # or whatever the equivalent is on your system
                   # e.g. "msbuild" on windows / Visual Studio
 ```
