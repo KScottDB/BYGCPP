@@ -1,6 +1,3 @@
-#ifndef _Main_HH_
-#define _Main_HH_
+#pragma once
 
 int main();
-
-#endif
