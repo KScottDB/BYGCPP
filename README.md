@@ -9,6 +9,8 @@ Hopefully this one is easier to maintain.
 
 # How
 
+Requirements: CMake, ZeroMQ
+
 This project uses CMake as a building system.
 
 On most systems you should be able to run these commands to build,

@@ -8,6 +8,7 @@
 #include <string>
 #include <tuple>
 #include <list>
+#include <zmq.hpp>
 
 // i am a lazy typist, temporarily shortens "std::string".
 #define str std::string
@@ -15,12 +16,22 @@
 namespace YoutubeDL {
 	// Used for 2-dimensional sizes, etc.
 	typedef std::tuple<int, int> Vector2;
-	
+
 	// Make types for the structs
 	typedef struct YoutubeFormat YoutubeFormat;
 	typedef struct YoutubeVideo YoutubeVideo;
 
 	class YoutubeInterface {
+	private:
+		// Check if connected to Python API
+		bool connectedToPython = false;
+
+		// ØMQ Variables
+		zmq::context_t zmqContext (1);
+		zmq::socket_t  zmqSocket  (zmqContext, ZMQ_REQ);
+
+		// Starts Python API server and connects to it
+		void connectPy();
 	public:
 		/* Download a video to disk. */
 		void downloadVideo(YoutubeVideo, str fileName, YoutubeFormat);
