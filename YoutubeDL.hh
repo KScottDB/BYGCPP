@@ -9,6 +9,7 @@
 #include <tuple>
 #include <list>
 #include <zmq.hpp>
+#include <boost/process.hpp>
 
 // i am a lazy typist, temporarily shortens "std::string".
 #define str std::string
@@ -30,12 +31,24 @@ namespace YoutubeDL {
 		zmq::context_t zmqContext;
 		zmq::socket_t  zmqSocket;
 
+		/* Python instance */
+		boost::process::child pyInstance;
+
 		/* Starts Python API server and connects to it. */
 		void connectPy();
 
 		/* Initializes ØMQ variables. */
 		void zmqInit();
+
+		/* Debugging output */
+		void dbgOutput(std::string output);
 	public:
+		// TEMPORARY DEBUG FUNCTION.
+		void tmpDbg() {
+			zmqInit();
+			connectPy();
+		};
+
 		/* Download a video to disk. */
 		void downloadVideo(YoutubeVideo, str fileName, YoutubeFormat);
 

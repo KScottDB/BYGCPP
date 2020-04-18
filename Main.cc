@@ -5,7 +5,9 @@
 #include "YoutubeDL.hh"
 
 int main() {
-	std::cout << "Placeholder test" << std::endl;
+	YoutubeDL::YoutubeInterface ytInterface = YoutubeDL::YoutubeInterface();
+
+	ytInterface.tmpDbg();
 
 	return 0;
 }
